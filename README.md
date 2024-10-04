@@ -10,7 +10,7 @@ O tema do hotel e, consequentemente, do site será sobre o universo de Senhor do
 
 **Requisitos funcionais para o site**: Para o total funcionamento, a aplicação deve conter um sistema de autenticação de usuário (cadastro e login) e campos para a reserva do quarto (busca por quartos disponíveis).
 
-**Requisitos Não funcionais** O site bem simples, com uma integração básica entre front-end, back-end e banco de dados. O objetivo não é escabilidade, sendo um site de exemplo, todavia o desempenho e seguranças das informações são requisitos não funcionais principais para o projeto.   
+**Requisitos Não funcionais** O será site bem simples, com uma integração básica entre front-end, back-end e banco de dados. O objetivo não é escabilidade, sendo um site de exemplo, todavia o desempenho e seguranças das informações são requisitos não funcionais principais para o projeto.   
 
 
 
