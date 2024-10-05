@@ -16,7 +16,7 @@ O tema do hotel e, consequentemente, do site será sobre o universo de Senhor do
 
 # Autores
 
-| [<img loading="lazy" src="https://https://avatars.githubusercontent.com/u/111576177?v=4" width=115><br><sub>Gabriel de Paula Baroni</sub>](https://github.com/camilafernanda) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Guilherme Lima</sub>](https://github.com/guilhermeonrails) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Alex Felipe</sub>](https://github.com/alexfelipe) |
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/111576177?v=4" width=115><br><sub>Gabriel de Paula Baroni</sub>](https://github.com/Gabriel-Baroni) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Guilherme Lima</sub>](https://github.com/guilhermeonrails) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Alex Felipe</sub>](https://github.com/alexfelipe) |
 | :---: | :---: | :---: |
 
 
