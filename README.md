@@ -34,6 +34,7 @@ Para o total funcionamento, a aplicação deve conter:
 - `Segurança`: O site deve garantir que os dados do cliente estejam em segurança. 
 
 <h1>📊 Modelagem do Banco de Dados</h1> 
+![image](https://github.com/user-attachments/assets/62cb718a-212a-412c-9ae3-a1cea6efd21d)
 
 
 # Desenvolvedores
