@@ -35,7 +35,8 @@ Para o total funcionamento, a aplicação deve conter:
 
 <h1>📊 Modelagem do Banco de Dados</h1> 
 <img src="https://github.com/user-attachments/assets/62cb718a-212a-412c-9ae3-a1cea6efd21d" width=1000> 
-<img src="https://github.com/user-attachments/assets/6c0889ea-e9b7-4b44-b8b8-c28147963b57" width=1000> 
+<img src="https://github.com/user-attachments/assets/316517d0-d948-40d4-9674-ee228fe5e791" width=1000> 
+
 
 
 
