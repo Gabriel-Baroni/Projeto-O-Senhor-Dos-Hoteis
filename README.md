@@ -9,7 +9,7 @@
 -  Carlos Eduardo Duque Polito
 -  Olavo Olimpo de Matos Junior 
 
-<h1>🎯Objetivo do projeto</h1> 
+<h1>🎯 Objetivo do projeto</h1> 
 O objetivo desse projeto é construir um site de reserva para uma hotelaria fictícia, que no caso é a hotelaria "O Senhor Dos Hotéis". Esta, possui a temática inspirada no vasto universo pertencente a franquia de "O Senhor dos Anéis". 
 <br>
 <h1>:hammer: Funcionalidades do projeto</h2>
@@ -47,7 +47,7 @@ Esse projeto contará com a seguinte modelagem de dados:
 - `Tabela dos Quartos`: Essa tabela é responsável por armazenar as características dos quartos, contendo campos relacionados ao id, capacidade de ocupação do quarto e o preço da diária. O campo idQuartos é a chave primária.
 - `Tabela dos Reservas`: Essa tabela é a responsável por fazer a relação entre as outras demais tabelas, onde possui os campos idReserva, checkin, checkout, preco_total, e os id's da tabela quarto e usuário. A chave primária é o campo idReserva, já as chaves estrangeiras são os campos Usuário_idUsuário e Quartos_idQuartos. 
 
-<h1>🧰Tecnologias Utilizadas</h1> 
+<h1>🧰 Tecnologias Utilizadas</h1> 
 
 `Front-end`:
 <br><br>
