@@ -1,17 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Login e Cadastro</title>
+    <style>
+        #loginForm, #cadastroForm {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <form action="/login_cadastro" method="POST">
-        <input type="name" name="nome" placeholder="Nome" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="tel" placeholder="Telefone" required>
-        <input type="password" name="senha" placeholder="Senha" required>
-        <button type="submit"Cadastrar></button>
+    <h1 id="formTitle">Cadastro</h1>
+    <form id="cadastroForm" action="{{ url_for('login_cadastro') }}" method="POST">
+
+        <input type="hidden" name="action" value="cadastro"> 
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <label for="tel">Telefone:</label>
+        <input type="tel" id="tel" name="tel" required>
+
+        <button type="submit">Cadastrar</button>
     </form>
+
+    <form id="loginForm" action="{{ url_for('login_cadastro') }}" method="POST">
+
+        <input type="hidden" name="action" value="login"> 
+
+        <label for="emailLogin">Email:</label>
+        <input type="email" id="emailLogin" name="email" required>
+
+        <label for="senhaLogin">Senha:</label>
+        <input type="password" id="senhaLogin" name="senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Botões para alternar entre Login e Cadastro -->
+    <button id="switchToLogin" onclick="toggleForm('login')">Já possui uma conta? Login</button>
+    <button id="switchToCadastro" onclick="toggleForm('cadastro')" style="display:none;">Não possui uma conta? Cadastre-se</button>
+
+
+    <script src="/static/formtoggle.js"></script>
+
+
 </body>
 </html>
