@@ -15,8 +15,7 @@ def init_routes(app):
             email = request.form.get("email")
             senha = request.form.get("senha")
             tel = request.form.get("tel")
-
-            # Cria um dicionário com os dados do usuário
+            
             data = {
                 "Nome": nome,
                 "email": email,
@@ -24,12 +23,10 @@ def init_routes(app):
                 "tel": tel
             }
 
-            # Inserir dados no banco de dados do Supabase
             response = supabase.table("User").insert(data).execute()
 
-            # Verifica o código de status da resposta
-            if response.status_code == 201:  # Sucesso
-                return redirect(url_for('homepage'))  # Corrigido: usa o nome da função
+            if response.status_code == 201:  
+                return redirect(url_for('homepage'))  
             else:
                 return "Erro ao cadastrar usuário", 400
         else:
