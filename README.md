@@ -35,7 +35,9 @@ Para o total funcionamento, a aplicação deve conter:
 
 <h1>📊 Modelagem do Banco de Dados</h1> 
 <img src="https://github.com/user-attachments/assets/d7c8df29-71e4-4367-88cf-8e1c5ee8d987" width=1000> 
-<img src="https://github.com/user-attachments/assets/49e11b13-c231-4ae7-ae38-222c95d66f3e" width=1000> 
+<img src="https://github.com/user-attachments/assets/5c7bba93-2a21-47be-81da-204692c70665" width=1000> 
+
+
 
 Esse projeto contará com a seguinte modelagem de dados: 
 <br><br> 
@@ -63,13 +65,15 @@ Esse projeto contará com a seguinte modelagem de dados:
 <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white">
 
 <h1>🏗️ Arquitetura da Aplicação</h1> 
-<img src="https://github.com/user-attachments/assets/9ad42a0f-a02b-4549-9a7e-eb8cd7ebbc4a" width=1000> 
+<img src="https://github.com/user-attachments/assets/49e11b13-c231-4ae7-ae38-222c95d66f3e" width=1000> 
 
 
 # 🧑‍💻 Desenvolvedores
 
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/111576177?v=4" width=115><br><sub>Gabriel de Paula Baroni</sub>](https://github.com/Gabriel-Baroni) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184117774?v=4" width=115><br><sub>Vinícius Ferreira Guimarães Maximo</sub>](https://github.com/vinimaxi) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184420136?v=4" width=115><br><sub>Renan Alexandre Morais de Souza</sub>](https://github.com/renan-alexandre-morais) |
 | :---: | :---: | :---: |
+
+
 
 
 
