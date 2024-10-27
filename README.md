@@ -77,7 +77,7 @@ Esse projeto contará com a seguinte modelagem de dados:
 <h1>🏗️ Arquitetura da Aplicação</h1> 
 <h2>Arquitetura do Software</h2>
 <img src="https://github.com/user-attachments/assets/49e11b13-c231-4ae7-ae38-222c95d66f3e" width=1000> 
-<h2>Arquitetura da Rede da Hotelaria</h2>
+<h2>Arquitetura de Rede da Hotelaria</h2>
 <img src="https://github.com/user-attachments/assets/8de6fe1c-e573-4cf2-98cb-f2a7a5097bda" width=1000> 
 
 # 🧑‍💻 Desenvolvedores
