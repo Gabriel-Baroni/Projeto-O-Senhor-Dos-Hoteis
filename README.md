@@ -70,10 +70,6 @@ Esse projeto contará com a seguinte modelagem de dados:
 <img src="https://img.shields.io/badge/Miro-%23000000.svg?style=for-the-badge&logo=miro&logoColor=white">
 <img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=canva&logoColor=white">
 
-
-
-
-
 <h1>🏗️ Arquitetura da Aplicação</h1> 
 <h2>Arquitetura do Software</h2>
 <img src="https://github.com/user-attachments/assets/49e11b13-c231-4ae7-ae38-222c95d66f3e" width=1000> 
