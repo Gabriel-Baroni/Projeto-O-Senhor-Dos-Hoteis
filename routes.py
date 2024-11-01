@@ -3,10 +3,12 @@ from flask import render_template, request, redirect, url_for, Blueprint
 bp = Blueprint('main', __name__)
 
 def init_routes(app, supabase):
+    #Rota para a tela inicial
     @app.route("/")
     def homepage():
         return render_template("index.html")
 
+    #Rota para a tela de login e cadastro
     @app.route("/login_cadastro", methods=["GET", "POST"])
     def login_cadastro():
         if request.method == "POST":
@@ -43,3 +45,14 @@ def init_routes(app, supabase):
                     return "Erro no login: usuário não encontrado ou senha incorreta", 400
 
         return render_template("login_cadastro.html")
+    
+    #Rota para a tela de informações do hotel
+    @app.route("/about")
+    def about():
+        return render_template("about.html")
+    
+    #Rota para a tela de suporte 
+    @app.route("/suport")
+    def suport():
+        return render_template("suport.html")
+    
