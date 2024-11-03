@@ -37,8 +37,6 @@ Para o total funcionamento, a aplicação deve conter:
 <img src="https://github.com/user-attachments/assets/d7c8df29-71e4-4367-88cf-8e1c5ee8d987" width=1000> 
 <img src="https://github.com/user-attachments/assets/5c7bba93-2a21-47be-81da-204692c70665" width=1000> 
 
-
-
 Esse projeto contará com a seguinte modelagem de dados: 
 <br><br> 
 
