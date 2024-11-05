@@ -9,7 +9,31 @@
     Olá oii
     <a href="{{ url_for('login_cadastro') }}" class="button">Acessar Login/Cadastro</a>
 
+    <h1>Bem-vindo ao Hotel</h1>
+    <h2>Buscar Quartos Disponíveis</h2>
+    <form action="/" method="post">
+        <label for="numero_pessoas">Número de Pessoas:</label>
+        <input type="number" id="numero_pessoas" name="numero_pessoas" required>
 
+        <label for="checkin">Data de Check-in:</label>
+        <input type="date" id="checkin" name="checkin" required>
+
+        <label for="checkout">Data de Check-out:</label>
+        <input type="date" id="checkout" name="checkout" required>
+
+        <button type="submit">Buscar Quartos</button>
+    </form>
+
+    {% if quartos %}
+        <h2>Quartos Disponíveis:</h2>
+        <ul>
+            {% for quarto in quarto %}
+                <li>Quarto ID: {{ quarto['id'] }} - Capacidade: {{ quarto['capacidade'] }} - Preço: {{ quarto['preco_diaria'] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum quarto disponível.</p>
+    {% endif %}
 
 </body>
 </html>

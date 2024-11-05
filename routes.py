@@ -1,12 +1,31 @@
-from flask import render_template, request, redirect, url_for, Blueprint
+from flask import render_template, request, redirect, url_for, Blueprint, jsonify
+from datetime import datetime
 
 bp = Blueprint('main', __name__)
 
 def init_routes(app, supabase):
     #Rota para a tela inicial
-    @app.route("/")
+    @app.route("/", methods=["GET", "POST"])
     def homepage():
-        return render_template("index.html")
+        quartos = []
+        if request.method =="POST":
+            numero_pessoas= request.form.get("numero_pessoas")
+            checkin= request.form.get("checkin")
+            checkout=request.form.get("checkout")
+            
+            numero_pessoas = int(numero_pessoas)
+            checkin = datetime.strptime(checkin, '%Y-%m-%d')
+            checkout = datetime.strptime(checkout, '%Y-%m-%d')
+
+            response=supabase.table("Quarto").select("*").gte("capacidade", numero_pessoas).eq("disponiblidade", 1).execute()
+
+
+            if response.data:
+                return jsonify(response.data), 200
+            quartos = response.data
+            print("Quartos encontrados:", quartos)
+            
+        return render_template("index.html", quartos=quartos)
 
     #Rota para a tela de login e cadastro
     @app.route("/login_cadastro", methods=["GET", "POST"])
