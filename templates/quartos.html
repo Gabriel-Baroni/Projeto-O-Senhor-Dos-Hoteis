@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if quartos %}
+    <h2>Quartos Disponíveis:</h2>
+    <div class="quartos">
+        {% for quarto in quartos %}
+            <div class="quarto">
+                <img src="{}" alt="Imagem do Quarto" style="width: 200px; height: 150px;">
+                <h3>{{ quarto['nome'] }}</h3>
+                <p>Capacidade: {{ quarto['capacidade'] }} pessoas</p>
+                <p>Preço por noite: R$ {{ quarto['preco_diaria'] }}</p>
+                <p><a href="{}">Ver Detalhes e Reservar</a></p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Nenhum quarto disponível para as datas e número de pessoas selecionados.</p>
+{% endif %}
+</body>
+</html>

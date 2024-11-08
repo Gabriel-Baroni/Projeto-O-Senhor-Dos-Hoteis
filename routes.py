@@ -7,25 +7,24 @@ def init_routes(app, supabase):
     #Rota para a tela inicial
     @app.route("/", methods=["GET", "POST"])
     def homepage():
-        quartos = []
-        if request.method =="POST":
-            numero_pessoas= request.form.get("numero_pessoas")
-            checkin= request.form.get("checkin")
-            checkout=request.form.get("checkout")
-            
-            numero_pessoas = int(numero_pessoas)
-            checkin = datetime.strptime(checkin, '%Y-%m-%d')
-            checkout = datetime.strptime(checkout, '%Y-%m-%d')
+        return render_template("index.html")  # Apenas renderiza o formulário
 
-            response=supabase.table("Quarto").select("*").gte("capacidade", numero_pessoas).eq("disponiblidade", 1).execute()
+    # Rota para a página de resultados dos quartos (quartos.html)
+    @app.route("/quartos", methods=["POST"])
+    def quartos():
+        numero_pessoas = int(request.form.get("numero_pessoas"))
+        checkin = datetime.strptime(request.form.get("checkin"), "%Y-%m-%d")
+        checkout = datetime.strptime(request.form.get("checkout"), "%Y-%m-%d")
+        
+        # Consulta os quartos no banco de dados (Supabase)
+        response = supabase.table("Quarto").select("*").gte("capacidade", numero_pessoas).eq("disponiblidade", 1).execute()
+        
+        quartos = response.data  # Lista de quartos encontrados
+        
+        # Renderiza a página quartos.html com os quartos encontrados
+        return render_template("quartos.html", quartos=quartos)
+    
 
-
-            if response.data:
-                return jsonify(response.data), 200
-            quartos = response.data
-            print("Quartos encontrados:", quartos)
-            
-        return render_template("index.html", quartos=quartos)
 
     #Rota para a tela de login e cadastro
     @app.route("/login_cadastro", methods=["GET", "POST"])
