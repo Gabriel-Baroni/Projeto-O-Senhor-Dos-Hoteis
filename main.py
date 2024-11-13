@@ -2,6 +2,7 @@ from flask import Flask
 import os
 from supabase import create_client, Client
 from routes import init_routes
+ 
 
 
 app= Flask(__name__)

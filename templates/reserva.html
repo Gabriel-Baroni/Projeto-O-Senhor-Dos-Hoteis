@@ -11,9 +11,10 @@
     <img src="{{ quarto['imagem_url'] }}" alt="Imagem do Quarto" style="width: 400px; height: 300px;">
     <p>Capacidade: {{ quarto['capacidade'] }} pessoas</p>
     <p>Preço por noite: R$ {{ quarto['preco_diaria'] }}</p>
-    <p>Descrição: {{ quarto['descricao'] }}</p>
+    <p>Preço por noite: R$ {{ reserva['preco_total'] }}</p>
+    <p>Descrição: blblblb </p>
 
-    <form action="/confirmar_reserva/{{ quarto['id'] }}" method="post">
+    <form action="/confirmar_reserva/{{ quarto.id }}" method="POST">
         <label for="checkin_date">Data de Check-in:</label>
         <input type="date" id="checkin_date" name="checkin_date" required>
 
