@@ -6,21 +6,12 @@
     <title>Reserva de Quarto</title>
 </head>
 <body>
-    <h1>Reserva do Quarto</h1>
-    <h2>{{ quarto['nome'] }}</h2>
-    <img src="{{ quarto['imagem_url'] }}" alt="Imagem do Quarto" style="width: 400px; height: 300px;">
-    <p>Capacidade: {{ quarto['capacidade'] }} pessoas</p>
-    <p>Preço por noite: R$ {{ quarto['preco_diaria'] }}</p>
-    <p>Preço por noite: R$ {{ reserva['preco_total'] }}</p>
-    <p>Descrição: blblblb </p>
-
-    <form action="/confirmar_reserva/{{ quarto.id }}" method="POST">
-        <label for="checkin_date">Data de Check-in:</label>
-        <input type="date" id="checkin_date" name="checkin_date" required>
-
-        <label for="checkout_date">Data de Check-out:</label>
-        <input type="date" id="checkout_date" name="checkout_date" required>
-
+    <h1>Detalhes do Quarto</h1>
+    <p>Nome: {{ quarto.Nome }}</p>
+    <p>Capacidade: {{ quarto.capacidade }}</p>
+    <p>Preço da diária: R$ {{ quarto.preco_diaria }}</p>
+    <p>Preço total: R$ {{ preco_total }}</p>
+    <form method="POST">
         <button type="submit">Confirmar Reserva</button>
     </form>
 </body>

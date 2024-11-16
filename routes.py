@@ -14,15 +14,68 @@ def init_routes(app, supabase):
     @app.route("/quartos", methods=["POST"])
     def quartos():
         numero_pessoas = int(request.form.get("numero_pessoas"))
+        checkin = request.form.get("checkin")
+        checkout = request.form.get("checkout")
+        session["checkin"] = checkin
+        session["checkout"] = checkout
         response = supabase.table("Quarto").select("*").gte("capacidade", numero_pessoas).eq("disponiblidade", 1).execute()
         usuario_id = session.get('usuario_id')
         quartos = response.data  
         
         return render_template("quartos.html", quartos=quartos, usuario_id=usuario_id)
     
-    @app.route("/reserva", methods=["GET", "POST"])
-    def reserva():
-        pass
+    @app.route("/reserva/<int:quarto_id>", methods=["GET", "POST"])
+    def reserva(quarto_id):
+         if request.method == "GET":
+            # Recupera os detalhes do quarto pelo ID
+            response = supabase.table("Quarto").select("*").eq("id", quarto_id).execute()
+            if not response.data:
+                flash("Quarto não encontrado.")
+                return redirect(url_for("homepage"))
+            
+            quarto = response.data[0]
+            checkin = session.get("checkin")
+            checkout = session.get("checkout")
+            if not checkin or not checkout:
+                flash("As datas de check-in e check-out não estão disponíveis. Por favor, reinicie a busca.")
+                return redirect(url_for("homepage"))
+            
+            # Calcula o total de dias e o preço total
+            data_checkin = datetime.strptime(checkin, "%Y-%m-%d")
+            data_checkout = datetime.strptime(checkout, "%Y-%m-%d")
+            dias = (data_checkout - data_checkin).days
+            preco_total = dias * quarto["preco_diaria"]
+            
+            return render_template("reserva.html", quarto=quarto, preco_total=preco_total)
+
+         elif request.method == "POST":
+            # Confirmar reserva
+            usuario_id = session.get("usuario_id")
+            if not usuario_id:
+                flash("Você precisa estar logado para fazer uma reserva.")
+                return redirect(url_for("login_cadastro"))
+
+            checkin = session.get("checkin")
+            checkout = session.get("checkout")
+
+            reserva_data = {
+                "usuario_id": usuario_id,
+                "quarto_id": quarto_id,
+                "checkin": checkin,
+                "checkout": checkout,
+                "preco_total": preco_total
+            }
+
+            # Insere a reserva no banco de dados
+            reserva_response = supabase.table("Reserva").insert(reserva_data).execute()
+            if not reserva_response.data:
+                flash("Erro ao confirmar a reserva.")
+                return redirect(url_for("homepage"))
+
+            # Atualiza a disponibilidade do quarto
+            supabase.table("Quarto").update({"disponiblidade": 0}).eq("id", quarto_id).execute()
+            flash("Reserva confirmada com sucesso!")
+            return redirect(url_for("homepage"))
     
     # Rota para a tela de login e cadastro
     @app.route("/login_cadastro", methods=["GET", "POST"])
