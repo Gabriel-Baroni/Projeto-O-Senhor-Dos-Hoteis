@@ -20,6 +20,20 @@
 
         <button type="submit">Buscar Quartos</button>
     </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for message in messages %}
+          <div class="alert alert-info flash-message" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  
+  <script src="/static/flash_message_time.js"></script>
+  
 </body>
 </html>
 
