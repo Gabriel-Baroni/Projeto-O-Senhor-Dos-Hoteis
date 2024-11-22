@@ -20,6 +20,7 @@
 
         <button type="submit">Buscar Quartos</button>
     </form>
+    <a href="{{ url_for('login_cadastro') }}">Faça login ou cadastro aqui</a>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
       <div class="flash-messages">

@@ -9,7 +9,14 @@ def init_routes(app, supabase):
     # Rota para a tela inicial (index.html)
     @app.route("/", methods=["GET", "POST"])
     def homepage():
+        #Verifica se a reserva já foi expirada: Se sim a joga para tabela das expiradas e remove das reservas
+        data_atual = datetime.now().date()
+        response=supabase.table("Reserva").select("*").lte("checkout", data_atual).execute()
+        for reserva in response.data:
+            supabase.table("Reserva_expirada").insert(reserva).execute()
+            response=supabase.table("Reserva").delete().eq("id", reserva['id']).execute()
         return render_template("index.html")  
+        
 
     # Rota para a página de resultados dos quartos (quartos.html)
     @app.route("/quartos", methods=["POST"])
@@ -20,6 +27,7 @@ def init_routes(app, supabase):
         checkout = request.form.get("checkout")
         session["checkin"] = checkin
         session["checkout"] = checkout
+
         #Converte as datas de string para datetime (sem a hora)
         try:
             data_checkin = datetime.strptime(checkin, "%Y-%m-%d").date()
@@ -29,12 +37,6 @@ def init_routes(app, supabase):
             return redirect(url_for("homepage"))
 
         #Condicionais para as datas de Check-in e Check-out
-        if data_checkin < datetime.now().date():
-            flash("A data de check-in não pode ser anterior à data atual.")
-            return redirect(url_for("homepage"))
-        if data_checkin < datetime.now().date():
-            flash("A data de check-in não pode ser anterior à data atual.")
-            return redirect(url_for("homepage"))
         if data_checkout <= data_checkin:
             flash("A data de checkout deve ser posterior à data de check-in.")
             return redirect(url_for("homepage"))
@@ -156,6 +158,8 @@ def init_routes(app, supabase):
                 }
 
                 response = supabase.table("User").insert(data).execute()
+                user = supabase.auth.sign_up({ "email": email, "password": senha})
+
                 if response.data:
                     flash("Cadastro realizado com sucesso!")
                     return redirect(url_for('homepage'))
