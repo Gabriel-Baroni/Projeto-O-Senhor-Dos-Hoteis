@@ -158,7 +158,13 @@ def init_routes(app, supabase):
                 }
 
                 response = supabase.table("User").insert(data).execute()
-                user = supabase.auth.sign_up({ "email": email, "password": senha})
+                supabase.auth.sign_up(
+                    email = email,
+                    password = senha,
+                    data={
+                        "display_name": nome
+                    }
+                )
 
                 if response.data:
                     flash("Cadastro realizado com sucesso!")
@@ -170,12 +176,11 @@ def init_routes(app, supabase):
             elif action == "login":
                 email = request.form.get("email")
                 senha = request.form.get("senha")
-
                 response = supabase.table("User").select("*").eq("email", email).eq("senha", senha).execute()
 
-                if response.data:
-                    user = response.data[0]
-                    session['usuario_id'] = user['id']
+                if  response.data:
+                    usuario = response.data[0]
+                    session['usuario_id'] = usuario['id']
                     flash("Login realizado com sucesso!")
                     return redirect(url_for('homepage'))
                 else:
