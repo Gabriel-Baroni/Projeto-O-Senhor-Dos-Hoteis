@@ -1,0 +1,151 @@
+
+/* Estilos para o container */
+/* Ajustes para a .container */
+.container {
+    max-width: 3000px;
+    padding: 1%;
+    margin: 0 auto;
+    color: black;
+    text-transform: uppercase;
+    position: relative; /* Se necessário para posicionamento da imagem */
+}
+
+  /* Estilos para o menu de navegação */
+nav {
+    background-color: white;
+    padding: 20px 0;  /* Adiciona espaçamento em cima e embaixo */
+}
+
+nav .logo {
+    text-align: center;  /* Centraliza a logo */
+    margin-bottom: 20px;
+}
+
+nav .titulo {
+    font-size: 1.8em;
+    text-align: center;  /* Centraliza o título */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;  /* Centraliza os itens na navegação */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;  /* Espaçamento entre os links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding: 10px 20px;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;  /* Altera o fundo ao passar o mouse */
+    color: #333;  /* Altera a cor do texto ao passar o mouse */
+}
+
+  /* Estilos para o logo e imagem */
+.imagem-painel {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.folhae {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Fundo suave */
+}
+
+  /* Contêiner do formulário */
+.form-container {
+    display: flex;
+    justify-content: center;    /* Centraliza o formulário horizontalmente */
+    align-items: flex-start;    /* Alinha o formulário ao topo */
+    position: absolute;         /* Permite posicionamento fixo em relação à tela */
+    top: 50%;                   /* Coloca o formulário um pouco abaixo do topo da página */
+    left: 50%;                  /* Centraliza o contêiner horizontalmente */
+    transform: translateX(-50%); /* Ajusta o contêiner para que ele fique no meio exato da tela */
+    width: 100%;                /* Garantimos que o contêiner ocupe toda a largura disponível */
+    max-width: 1000px;           /* Limita a largura do formulário */
+    padding: 20px;
+    background-color: #3d534f;    /* Fundo branco para destacar o formulário */
+    border-radius: 30px;        /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+}
+
+  /* Estilo para o formulário */
+/* Estilos para o formulário */
+/* Estilos para o formulário */
+form {
+    display: flex;
+    flex-direction: row ; /* Organiza os campos do formulário em coluna */
+    gap: 30px; /* Aumenta o espaçamento entre os campos do formulário */
+    width: 100%; /* Faz o formulário ocupar toda a largura disponível */
+}
+
+/* Estilo para os rótulos (labels) */
+form label {
+    font-size: 16px;
+    margin-bottom: 5px; /* Espaço abaixo do rótulo */
+}
+
+/* Estilo para os campos de entrada (inputs) */
+form input {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px; /* Espaço entre os campos */
+    border: 1px solid #ccc; /* Borda suave para os campos */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #fafafa; /* Cor de fundo leve para os campos */
+}
+
+/* Adiciona mais espaço no topo dos rótulos Check-in e Check-out */
+form label[for="checkin"], form label[for="checkout"] {
+    margin-top: 20px; /* Ajuste o valor para o tanto que você quiser descer */
+}
+
+/* Estilo para o botão */
+form button {
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff; /* Cor de fundo do botão */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para o botão */
+form button:hover {
+    background-color: #0056b3; /* Cor de fundo do botão quando o mouse passa por cima */
+}
+/* Adiciona mais espaço no topo dos campos de Check-in e Check-out diretamente */
+#checkin, #checkout {
+    color: white;
+}
+
+.check {
+    color :#ffffff
+}
+
