@@ -74,6 +74,8 @@ Esse projeto contará com a seguinte modelagem de dados:
 <h2>Arquitetura de Rede da Hotelaria</h2>
 <img src="https://github.com/user-attachments/assets/8de6fe1c-e573-4cf2-98cb-f2a7a5097bda" width=1000> 
 
+<p>Adicionar diagram UML, estudo de caso e matriz de requisito</p>
+
 # 🧑‍💻 Desenvolvedores
 
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/111576177?v=4" width=115><br><sub>Gabriel de Paula Baroni</sub>](https://github.com/Gabriel-Baroni) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184117774?v=4" width=115><br><sub>Vinícius Ferreira Guimarães Maximo</sub>](https://github.com/vinimaxi) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/184420136?v=4" width=115><br><sub>Renan Alexandre Morais de Souza</sub>](https://github.com/renan-alexandre-morais) |
