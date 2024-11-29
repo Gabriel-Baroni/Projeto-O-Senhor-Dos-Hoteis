@@ -4,7 +4,7 @@
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 
-<h1>👨‍🏫 Professores responsáveis</h1> 
+<h1>👨‍🏫 Professores Oii responsáveis</h1> 
 
 -  Carlos Eduardo Duque Polito
 -  Olavo Olimpo de Matos Junior 
