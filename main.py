@@ -2,7 +2,7 @@ from flask import Flask
 import os
 from supabase import create_client, Client
 from routes import init_routes
- 
+
 #Chave de sessão do Flask
 FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY")
 

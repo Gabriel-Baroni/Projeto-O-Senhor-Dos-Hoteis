@@ -1,3 +1,4 @@
+/* Resetando margens e configurando o layout principal */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -24,75 +25,91 @@ body {
     background-image: url('static/imagem/Plano.png'); /* A imagem de fundo */
     background-size: cover;
     background-position: center;
-    opacity: 0,8;
 }
 
-/* Formulário Contêiner */
+/* Container do formulário */
 .form-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: transparent;
-    border-radius: 30px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.514); /* Fundo suave, com opacidade */
+    border-radius: 20px; /* Bordas mais arredondadas */
+    padding: 40px 30px; /* Aumenta o espaçamento interno */
     width: 100%;
-    max-width: 400px;
+    max-width: 350px; /* Largura maior para o formulário */
     text-align: center;
-    z-index: 10; /* Garante que o formulário fique acima da imagem */
-    backdrop-filter: blur(40px); 
-
+    z-index: 10;
+    backdrop-filter: blur(15px); /* Desfoque de fundo mais sutil */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1); /* Sombra suave e difusa */
+    animation: fadeIn 0.8s ease-out; /* Animação suave ao aparecer */
+    display: flex;
+    flex-direction: column; /* Garante que todos os elementos dentro do formulário sejam empilhados */
+    gap: 20px; /* Adiciona espaçamento entre os elementos */
 }
 
-/* Seção direita (tela verde sem conteúdo) */
-.right-section {
-    flex: 1;
-    background-color: #28a745; /* Cor verde */
+/* Animação de Fade-In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Título do formulário */
 h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ffffff;
+    font-size: 2.4em; /* Tamanho maior para o título */
+    margin-bottom: 30px; /* Espaço maior abaixo do título */
+    color: #333; /* Cor escura e moderna */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    font-weight: 600;
 }
 
 /* Estilo para os campos de entrada */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 form input {
-    padding: 12px;
-    font-size: 14px;
+    padding: 15px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f9f9f9;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
+    width: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave nos inputs */
+    
+
 }
 
 form input:focus {
     border-color: #007bff;
     outline: none;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Sombra destacada ao focar */
 }
 
 /* Estilo para os botões do formulário */
 form button {
-    padding: 12px;
+    padding: 15px;
     font-size: 16px;
-    color: white;
-    background-color: #007bff;
+    color: #fff;
+    background-color: #3d534f; /* Cor verde especificada */
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    width: 70%; /* Botão ocupa toda a largura do formulário */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave no botão */
+    margin-top: 20px; /* Adiciona um espaço entre os campos e o botão */
+    margin-bottom: 20px;
+    
 }
 
+/* Botão "Cadastrar" */
 form button:hover {
-    background-color: #0056b3;
+    background-color: #4a7752;
+    transform: translateY(-2px); /* Efeito de botão flutuando */
 }
 
 /* Botões para alternar entre Login e Cadastro */
@@ -100,23 +117,92 @@ form button:hover {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .switch-container button {
     background-color: transparent;
     border: none;
-    color: #007bff;
+    color: #336437;
     font-size: 14px;
     cursor: pointer;
     text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 .switch-container button:hover {
-    color: #0056b3;
+    color: #30522d;
 }
 
 /* Formulário Inativo (ocultar o formulário alternado) */
 form:not(.active) {
     display: none;
+}
+
+/* Seção direita (tela verde sem conteúdo) */
+.right-section {
+    flex: 1;
+    background-color: #3d534f; /* Cor verde */
+}
+
+/* Estilos adicionais para a responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Deixa a tela em duas colunas em telas menores */
+    }
+    .left-section, .right-section {
+        flex: none;
+        width: 100%; /* Faz com que as seções ocupem 100% da largura */
+    }
+    .form-container {
+        width: 80%; /* Reduz o tamanho do formulário em telas pequenas */
+    }
+
+    h1 {
+        font-size: 2em; /* Tamanho de título menor em telas pequenas */
+    }
+}
+
+
+.switch-container button {
+    background-color: transparent;
+    border: none;
+    color: #334133;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 3s ease;
+}
+
+.switch-container button:hover {
+    color: #4b8643;
+}
+
+/* Formulário Inativo (ocultar o formulário alternado) */
+form:not(.active) {
+    display: none;
+}
+
+/* Seção direita (tela verde sem conteúdo) */
+.right-section {
+    flex: 1;
+    background-color: #3d534f; /* Cor verde */
+}
+
+/* Estilos adicionais para a responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Deixa a tela em duas colunas em telas menores */
+    }
+    .left-section, .right-section {
+        flex: none;
+        width: 100%; /* Faz com que as seções ocupem 100% da largura */
+    }
+    .form-container {
+        width: 80%; /* Reduz o tamanho do formulário em telas pequenas */
+    }
+
+    h1 {
+        font-size: 2em; /* Tamanho de título menor em telas pequenas */
+    }
 }

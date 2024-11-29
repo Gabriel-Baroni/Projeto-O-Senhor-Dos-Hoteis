@@ -54,8 +54,7 @@
         <input type="date" id="checkout" name="checkout" placeholder="Check-out" required>
     
         <button type="submit">Buscar Quartos</button>
-    </form>
-
+    </form>   
     {% with messages = get_flashed_messages() %}
     {% if messages %}
       <div class="flash-messages">
@@ -66,7 +65,8 @@
         {% endfor %}
       </div>
     {% endif %}
-  {% endwith %}
+  {% endwith %}    
+
   
   <script src="/static/flash_message_time.js"></script>
   
