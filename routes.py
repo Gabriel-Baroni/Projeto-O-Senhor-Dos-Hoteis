@@ -165,13 +165,8 @@ def init_routes(app, supabase):
                 }
 
                 response = supabase.table("User").insert(data).execute()
-                supabase.auth.sign_up(
-                    email = email,
-                    password = senha,
-                    data={
-                        "display_name": nome
-                    }
-                )
+                
+                supabase.auth.sign_up({ "email": email, "password": senha})
 
                 if response.data:
                     flash("Cadastro realizado com sucesso!")
