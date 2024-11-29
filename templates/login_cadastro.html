@@ -37,11 +37,11 @@
                 <form id="loginForm" action="{{ url_for('login_cadastro') }}" method="POST">
                     <input type="hidden" name="action" value="login"> 
 
-                    <label for="emailLogin">Email:</label>
-                    <input type="email" id="emailLogin" name="email" required>
+                    <label for="emailLogin"></label>
+                    <input type="email" id="emailLogin" name="email" placeholder="Email" required>
 
-                    <label for="senhaLogin">Senha:</label>
-                    <input type="password" id="senhaLogin" name="senha" required>
+                    <label for="senhaLogin"></label>
+                    <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required>
 
                     <button type="submit">Entrar</button>
                 </form>
