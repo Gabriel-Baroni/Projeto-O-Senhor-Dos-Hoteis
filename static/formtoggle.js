@@ -1,17 +1,23 @@
 function toggleForm(formType) {
+    const loginForm = document.getElementById('loginForm');
+    const cadastroForm = document.getElementById('cadastroForm');
+    const switchToCadastro = document.getElementById('switchToCadastro');
+    const switchToLogin = document.getElementById('switchToLogin');
+    
     if (formType === 'login') {
-        document.getElementById("loginForm").style.display = "block";
-        document.getElementById("cadastroForm").style.display = "none";
-        document.getElementById("formTitle").innerText = "Login";
-        document.getElementById("switchToLogin").style.display = "none";
-        document.getElementById("switchToCadastro").style.display = "block";
-    } else {
-        document.getElementById("loginForm").style.display = "none";
-        document.getElementById("cadastroForm").style.display = "block";
-        document.getElementById("formTitle").innerText = "Cadastro";
-        document.getElementById("switchToLogin").style.display = "block";
-        document.getElementById("switchToCadastro").style.display = "none";
+        loginForm.classList.add('active');
+        cadastroForm.classList.remove('active');
+        switchToCadastro.style.display = 'inline-block';
+        switchToLogin.style.display = 'none';
+    } else if (formType === 'cadastro') {
+        cadastroForm.classList.add('active');
+        loginForm.classList.remove('active');
+        switchToCadastro.style.display = 'none';
+        switchToLogin.style.display = 'inline-block';
     }
 }
 
-toggleForm('cadastro');
+// Inicializa a exibição do formulário
+window.onload = function() {
+    document.getElementById('cadastroForm').classList.add('active');
+};

@@ -4,53 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e Cadastro</title>
-    <style>
-        #loginForm, #cadastroForm {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="static/log.css">
 </head>
 <body>
-    <h1 id="formTitle">Cadastro</h1>
-    <form id="cadastroForm" action="{{ url_for('login_cadastro') }}" method="POST">
+    <div class="container">
+        <!-- Seção Esquerda (Formulário e Imagem de Fundo) -->
+        <div class="left-section">
+            <img src="static/imagem/Plano.png" alt="Imagem de Fundo" class="background-image">
+            <!-- Formulário de Cadastro -->
+            <div class="form-container">
+                <h1 id="formTitle">Cadastro</h1>
 
-        <input type="hidden" name="action" value="cadastro"> 
+                <form id="cadastroForm" action="{{ url_for('login_cadastro') }}" method="POST">
+                    <input type="hidden" name="action" value="cadastro"> 
 
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+                    <label for="nome"></label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
+                    <label for="senha"></label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
 
-        <label for="tel">Telefone:</label>
-        <input type="tel" id="tel" name="tel" required>
+                    <label for="tel"></label>
+                    <input type="tel" id="tel" name="tel" placeholder="Telefone" required>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+                    <button type="submit">Cadastrar</button>
+                </form>
 
-    <form id="loginForm" action="{{ url_for('login_cadastro') }}" method="POST">
+                <!-- Formulário de Login -->
+                <form id="loginForm" action="{{ url_for('login_cadastro') }}" method="POST">
+                    <input type="hidden" name="action" value="login"> 
 
-        <input type="hidden" name="action" value="login"> 
+                    <label for="emailLogin">Email:</label>
+                    <input type="email" id="emailLogin" name="email" required>
 
-        <label for="emailLogin">Email:</label>
-        <input type="email" id="emailLogin" name="email" required>
+                    <label for="senhaLogin">Senha:</label>
+                    <input type="password" id="senhaLogin" name="senha" required>
 
-        <label for="senhaLogin">Senha:</label>
-        <input type="password" id="senhaLogin" name="senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
 
-        <button type="submit">Entrar</button>
-    </form>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <div class="flash-messages">
+                    {% for message in messages %}
+                      <div class="alert alert-info flash-message" role="alert">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endwith %}
+              
+              <script src="/static/flash_message_time.js"></script>
 
-    <!-- Botões para alternar entre Login e Cadastro -->
-    <button id="switchToLogin" onclick="toggleForm('login')">Já possui uma conta? Login</button>
-    <button id="switchToCadastro" onclick="toggleForm('cadastro')" style="display:none;">Não possui uma conta? Cadastre-se</button>
+                <!-- Botões para alternar entre Login e Cadastro -->
+                <div class="switch-container">
+                    <button id="switchToLogin" onclick="toggleForm('login')">Já possui uma conta? Login</button>
+                    <button id="switchToCadastro" onclick="toggleForm('cadastro')" style="display:none;">Não possui uma conta? Cadastre-se</button>
+                </div>
+            </div>
+        </div>
 
-
-    <script src="/static/formtoggle.js"></script>
-
-
+        <!-- Seção Direita (Tela verde sem conteúdo) -->
+        <div class="right-section"></div>
+    </div>
+    <!-- Script JS -->
+    <script src="static/formtoggle.js"></script>
 </body>
 </html>

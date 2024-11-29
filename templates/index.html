@@ -3,24 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel</title>
+    <link rel="stylesheet" href="static/style.css">
+    <title>O Senhor Dos Hotéis</title>
 </head>
 <body>
-    <h1>Bem-vindo ao Hotel</h1>
-    <h2>Buscar Quartos Disponíveis</h2>
-    <form action="{{ url_for('quartos') }}" method="post">
-        <label for="numero_pessoas">Número de Pessoas:</label>
-        <input type="number" id="numero_pessoas" name="numero_pessoas" required>
-
-        <label for="checkin">Data de Check-in:</label>
-        <input type="date" id="checkin" name="checkin" required>
-
-        <label for="checkout">Data de Check-out:</label>
-        <input type="date" id="checkout" name="checkout" required>
-
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="static/imagem/logo.jpg" alt="O Senhor Dos Anéis" class="imagem-painel">
+        <div class="titulo"> O Senhor <br> Dos Hotéis</div>
+        <div>
+          <img src="static/imagem/folhae.png" class="folhae" alt="Folhae">
+        </div>
+        
+      </div>
+      <hr>
+      <!-- Menu de navegação -->
+      <ul>
+        <li><a href="#">Suporte</a></li>
+        <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>
+        <li><a href="#">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+    <div class="fundo"></div>
+    <div class="content">
+      
+    </div>
+    <div>
+      <img src="static/imagem/Plano.png" class="parallax" >
+    </div>
+  
+    <div class = "form-container">
+      <form action="{{ url_for('quartos') }}" method="post">
+        <label for="numero_pessoas"></label>
+        <input type="number" id="numero_pessoas" name="numero_pessoas" placeholder="Número de pessoas:" required>
+        
+        <label for="checkin" class = "check">Check-in:</label>
+        <input type="date" id="checkin" name="checkin" placeholder="Check-in" required>
+    
+        <label for="checkout"class="check">Check-out:</label>
+        <input type="date" id="checkout" name="checkout" placeholder="Check-out" required>
+    
         <button type="submit">Buscar Quartos</button>
     </form>
-    <a href="{{ url_for('login_cadastro') }}">Faça login ou cadastro aqui</a>
+
     {% with messages = get_flashed_messages() %}
     {% if messages %}
       <div class="flash-messages">
