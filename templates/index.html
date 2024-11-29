@@ -20,9 +20,16 @@
       <hr>
       <!-- Menu de navegação -->
       <ul>
-        <li><a href="#">Suporte</a></li>
-        <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>
         <li><a href="#">Sobre</a></li>
+        {% if usuario_email %}
+        <li>
+          <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
+          <a href="{{ url_for('logout') }}" class="button">Sign-out</a>
+        </li>
+        {% else %}
+          <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>
+        {% endif %}
+        <li><a href="#">Suporte</a></li>
       </ul>
     </nav>
   </div>

@@ -15,7 +15,14 @@ def init_routes(app, supabase):
         for reserva in response.data:
             supabase.table("Reserva_expirada").insert(reserva).execute()
             response=supabase.table("Reserva").delete().eq("id", reserva['id']).execute()
-        return render_template("index.html")  
+            
+        usuario_id = session.get("usuario_id")
+        usuario_email = None
+        if usuario_id:
+            user_response = supabase.table("User").select("email").eq("id", usuario_id).execute()
+            if user_response.data:
+                usuario_email = user_response.data[0]["email"]
+        return render_template("index.html", usuario_email=usuario_email)  
         
 
     # Rota para a página de resultados dos quartos (quartos.html)
@@ -188,6 +195,12 @@ def init_routes(app, supabase):
                     return redirect(url_for("login_cadastro"))
 
         return render_template("login_cadastro.html")
+    @app.route("/logout")
+    def logout():
+        session.pop("usuario_id", None)  # Remove o ID do usuário da sessão
+        flash("Você saiu da conta com sucesso.", "info")
+        return redirect(url_for("homepage"))
+
 
     # Rota para a tela de informações do hotel
     @app.route("/about")
