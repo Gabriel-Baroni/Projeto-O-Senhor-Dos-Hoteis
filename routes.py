@@ -191,6 +191,7 @@ def init_routes(app, supabase):
 
         return render_template("login_cadastro.html")
     @app.route("/logout")
+    
     def logout():
         session.pop("usuario_id", None)  # Remove o ID do usuário da sessão
         flash("Você saiu da conta com sucesso.", "info")
