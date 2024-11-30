@@ -34,13 +34,14 @@ Para o total funcionamento, a aplicação deve conter:
 - `Segurança`: O site deve garantir que os dados do cliente estejam em segurança. 
 
 <h1>📊 Modelagem do Banco de Dados</h1> 
-<img src="https://github.com/user-attachments/assets/d7c8df29-71e4-4367-88cf-8e1c5ee8d987" width=1000> 
-<img src="https://github.com/user-attachments/assets/5c7bba93-2a21-47be-81da-204692c70665" width=1000> 
+<img src="https://github.com/user-attachments/assets/fdc00b5c-a0bd-4325-9544-537244b89de6" width=1000> 
+<img src="https://github.com/user-attachments/assets/a9e70862-c581-4f1f-ab23-0528843d3102" width=1000> 
 
-Esse projeto contará com a seguinte modelagem de dados: 
+<h1>📖 Dicionário de Dados</h1> 
+Esse projeto contará com as seguintes tabelas: 
 <br><br> 
 
-- `Tabela Usuários`: Essa tabela é necessária para cadastrar o usuário e seus dados, possuindo campos relacionados ao id, email, nome e telefone. O campo idUsuário é a chave primária da tabela.  
+- `Tabela Usuários`: Essa tabela é necessária para cadastrar o cliente (quem realiza a reserva) e seus dados, possuindo os campos id, email, nome, telefone e senha.  
 - `Tabela dos Quartos`: Essa tabela é responsável por armazenar as características dos quartos, contendo campos relacionados ao id, capacidade de ocupação do quarto e o preço da diária. O campo idQuartos é a chave primária.
 - `Tabela dos Reservas`: Essa tabela é a responsável por fazer a relação entre as outras demais tabelas, onde possui os campos idReserva, checkin, checkout, preco_total, e os id's da tabela quarto e usuário. A chave primária é o campo idReserva, já as chaves estrangeiras são os campos Usuário_idUsuário e Quartos_idQuartos. 
 
