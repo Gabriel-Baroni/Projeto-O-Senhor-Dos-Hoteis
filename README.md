@@ -12,26 +12,29 @@
 <h1>🎯 Objetivo do projeto</h1> 
 O objetivo desse projeto é construir um site de reserva para uma hotelaria fictícia, que no caso é a hotelaria "O Senhor Dos Hotéis". Esta, possui a temática inspirada no vasto universo pertencente a franquia de "O Senhor dos Anéis". 
 <br>
-<h1>:hammer: Funcionalidades do projeto</h2>
-
-- `Registro de clientes`: Um sistema de cadastro de clientes à um banco de dados.
-- `Autenticação de conta`: Uma vez já cadastrado, o usuário poderá fazer login no site sem precisar refazer o cadastro. 
-- `Reserva de um quarto de hotel `: Um sistema de busca por quartos disponíveis para serem reservados. Essa busca ocorrerá na base de dados da hotelaria.
 
 <h1>✖️ O que não é o objetivo do projeto</h2>
 Por se tartar de um protótipo e um trabalho em pequena escala, somente com fim de teste de conhecimentos, o site não contará com:
 
 - `Escabilidade` Os desenvolvedores não estaram preocupados com a escabilidade do projeto 
-- `Métodos de pagamento`: O site conterá com uma página para pagamento da reserva, porém por se tratar de uma hotelaria fictícia, não será possível realizar nenhuma espécie de pagamento.  
+- `Métodos de pagamento`: O site conterá com uma página para pagamento da reserva, porém por se tratar de uma hotelaria fictícia, não será possível realizar nenhuma espécie de pagamento. 
 
 <h1>👥 Público-alvo</h2>
-O tema do hotel e, consequentemente, do site será, como já mencionado, sobre "O Senhor dos Anéis". O público-alvo desse site será aventureiros que sempre quiseram se sentir neste universo rico em magia e mistérios.  
+O tema do hotel e, consequentemente, do site será, como já mencionado, sobre "O Senhor dos Anéis". O público-alvo desse site será aventureiros que sempre quiseram se sentir neste universo rico em magia e mistérios. 
 
+<h1>:hammer: Funcionalidades do projeto</h2>
+
+- `Registro de clientes`: Um sistema de cadastro de clientes à um banco de dados.
+- `Autenticação de conta`: Uma vez já cadastrado, o usuário poderá fazer login no site sem precisar refazer o cadastro. 
+- `Reserva de um quarto de hotel `: Um sistema de busca por quartos disponíveis para serem reservados. Essa busca ocorrerá na base de dados da hotelaria.
+  
 <h1>☑️ Requisitos não funcionais para o site</h1> 
 Para o total funcionamento, a aplicação deve conter:
 
 - `Desempenho`: O site deve funcionar sem travamentos e com agilidade de resposta.
-- `Segurança`: O site deve garantir que os dados do cliente estejam em segurança. 
+- `Segurança`: O site deve garantir que os dados do cliente estejam em segurança.
+
+<h1>📑 Matriz de Requisitos</h1>
 
 <h1>📊 Modelagem do Banco de Dados</h1> 
 <img src="https://github.com/user-attachments/assets/f4d83469-2242-44d1-b8c5-b4635bef0c90" width=1000> 
@@ -40,8 +43,8 @@ Para o total funcionamento, a aplicação deve conter:
 
 
 <h1>📖 Dicionário de Dados</h1> 
-Esse projeto contará com as seguintes tabelas: 
-<br><br> 
+
+Esse projeto contará com as seguintes Entidades e atributos
 
 <h2>Entidade Usuário</h2>
  Essa tabela é necessária para cadastrar o cliente (quem realiza a reserva) e seus dados, possuindo os campos id, email, nome, telefone e senha. 
@@ -77,7 +80,6 @@ Essa tabela é a responsável por fazer a relação entre as outras demais tabel
 - `data_reserva`: É um atributo do tipo DATE. É o responsável por armazenar a data em que o usuário efetuou a reserva.
 
 <h2>Entidade Reserva Expirada</h2>
-<br><br>
 Essa tabela é a responsável por armazenar todas as reservas em que a data de check-out é mais velha que a data atual, ou seja, reservas que já acabaram. Os atributos da entidade possuem tipos e funções iguais a da entidade Reserva.
 
 <h1>🧰 Tecnologias Utilizadas</h1> 
