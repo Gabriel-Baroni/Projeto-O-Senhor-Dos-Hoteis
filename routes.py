@@ -120,6 +120,7 @@ def init_routes(app, supabase):
             quarto = response.data[0]
 
             # Calcula o preço total
+            data_atual = datetime.now().date()
             data_checkin = datetime.strptime(checkin, "%Y-%m-%d").date()
             data_checkout = datetime.strptime(checkout, "%Y-%m-%d").date()
             dias = (data_checkout - data_checkin).days
@@ -133,7 +134,8 @@ def init_routes(app, supabase):
                 "quarto_id": quarto_id,
                 "checkin": checkin,
                 "checkout": checkout,
-                "preco_total": preco_total
+                "preco_total": preco_total,
+                "data_reserva": data_atual.isoformat()
             }
 
             reserva_response = supabase.table("Reserva").insert(reserva_data).execute()
