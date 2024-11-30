@@ -66,6 +66,7 @@ Essa tabela é responsável por armazenar as características dos quartos, conte
 
 <h2>Entidade Reserva</h2>
 Essa tabela é a responsável por fazer a relação entre as outras demais tabelas, onde possui os campos id, checkin, checkout, preco_total, e os id's da tabela quarto e usuário. 
+<br><br>
 
 - `IdReserva`: É um atributo do tipo INT. É o responsável por criar um **Id único** (**CHAVE PRIMÁRIA**).
 - `checkin`: É um atributo do tipo DATE. É o responsável por armazenar a data em que o usuário irá começar sua estadia no hotel.
@@ -76,6 +77,7 @@ Essa tabela é a responsável por fazer a relação entre as outras demais tabel
 - `data_reserva`: É um atributo do tipo DATE. É o responsável por armazenar a data em que o usuário efetuou a reserva.
 
 <h2>Entidade Reserva Expirada</h2>
+<br><br>
 Essa tabela é a responsável por armazenar todas as reservas em que a data de check-out é mais velha que a data atual, ou seja, reservas que já acabaram. Os atributos da entidade possuem tipos e funções iguais a da entidade Reserva.
 
 <h1>🧰 Tecnologias Utilizadas</h1> 
