@@ -34,16 +34,49 @@ Para o total funcionamento, a aplicação deve conter:
 - `Segurança`: O site deve garantir que os dados do cliente estejam em segurança. 
 
 <h1>📊 Modelagem do Banco de Dados</h1> 
-<img src="https://github.com/user-attachments/assets/fdc00b5c-a0bd-4325-9544-537244b89de6" width=1000> 
-<img src="https://github.com/user-attachments/assets/a9e70862-c581-4f1f-ab23-0528843d3102" width=1000> 
+<img src="https://github.com/user-attachments/assets/f4d83469-2242-44d1-b8c5-b4635bef0c90" width=1000> 
+<img src="https://github.com/user-attachments/assets/a1c6643a-aea4-417f-afc4-37267b911e81" width=1000> 
+
+
 
 <h1>📖 Dicionário de Dados</h1> 
 Esse projeto contará com as seguintes tabelas: 
 <br><br> 
 
-- `Tabela Usuários`: Essa tabela é necessária para cadastrar o cliente (quem realiza a reserva) e seus dados, possuindo os campos id, email, nome, telefone e senha.  
-- `Tabela dos Quartos`: Essa tabela é responsável por armazenar as características dos quartos, contendo campos relacionados ao id, capacidade de ocupação do quarto e o preço da diária. O campo idQuartos é a chave primária.
-- `Tabela dos Reservas`: Essa tabela é a responsável por fazer a relação entre as outras demais tabelas, onde possui os campos idReserva, checkin, checkout, preco_total, e os id's da tabela quarto e usuário. A chave primária é o campo idReserva, já as chaves estrangeiras são os campos Usuário_idUsuário e Quartos_idQuartos. 
+<h2>Entidade Usuário</h2>
+ Essa tabela é necessária para cadastrar o cliente (quem realiza a reserva) e seus dados, possuindo os campos id, email, nome, telefone e senha. 
+ <br><br>
+ 
+- `idUsuário`: É um atributo do tipo INT. É o responsável por criar um **Id único** para o usuário, que no caso é o cliente que fará a reserva (**CHAVE PRIMÁRIA**).
+- `email`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar o e-mail que o usuário cadastrou.
+- `nome`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar o nome do usuário.
+- `telefone`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar o número de telefone do usuário.
+- `senha`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. É o responsável por armazenar a senha que o usuário cadastrou.
+- `created_at`: É um atributodo tipo DATE. É o responsável por armazenar a data em que o usuário realizou o cadastro.
+  
+<h2>Entidade Quarto</h2>
+Essa tabela é responsável por armazenar as características dos quartos, contendo campos relacionados ao id, capacidade de ocupação do quarto, o preço da diária e a disponibilidade do mesmo.
+<br><br>
+
+- `idQuartos`: É um atributo do tipo INT. É o responsável por criar um **Id único** (**CHAVE PRIMÁRIA**).
+- `capacidade`: É um atributo do tipo INT. É o responsável por armazenar a capacidade máxima de pessoas em um quarto.
+- `preco_diaria`: É um atributo do tipo FLOAT. É o responsável por armazenar o preço de uma diária do quarto.
+- `nome`: É um atributo do tipo VARCHAR com um tamanho de 45 caracteres. é o responsável por armazenar o nome do quarto.
+- `Disponibilidade`: É um atributo do tipo INT. É o responsável por armazenar a disponibilidade do quarto, se for igual a 1 significa que o quarto esta disponível, se for igual a zero significa que esta indisponível.
+
+<h2>Entidade Reserva</h2>
+Essa tabela é a responsável por fazer a relação entre as outras demais tabelas, onde possui os campos id, checkin, checkout, preco_total, e os id's da tabela quarto e usuário. 
+
+- `IdReserva`: É um atributo do tipo INT. É o responsável por criar um **Id único** (**CHAVE PRIMÁRIA**).
+- `checkin`: É um atributo do tipo DATE. É o responsável por armazenar a data em que o usuário irá começar sua estadia no hotel.
+- `checkout`: É um atributo do tipo DATE. É o responsável por armazenar a data em que o usuário irá terminar sua estadia no hotel.
+- `preco_total`:  É um atributo do tipo FLOAT. É o responsável por armazenar o preço total de uma reserva, ou seja, o número de dias da estadia vezes o preco da diária.
+- `Usuário_IdUsuário`: É um atributo do tipo INT. É o responsável por relacionar a tabela Reversa com a tabela Usuário através do id (**CHAVE ESTRANGEIRA**).
+- `Quartos_IdQuartos`: É um atributo do tipo INT. É o responsável por relacionar a tabela Reversa com a tabela Quartos através do id (**CHAVE ESTRANGEIRA**).
+- `data_reserva`: É um atributo do tipo DATE. É o responsável por armazenar a data em que o usuário efetuou a reserva.
+
+<h2>Entidade Reserva Expirada</h2>
+Essa tabela é a responsável por armazenar todas as reservas em que a data de check-out é mais velha que a data atual, ou seja, reservas que já acabaram. Os atributos da entidade possuem tipos e funções iguais a da entidade Reserva.
 
 <h1>🧰 Tecnologias Utilizadas</h1> 
 
