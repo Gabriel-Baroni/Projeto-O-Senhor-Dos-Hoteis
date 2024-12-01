@@ -22,9 +22,9 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-image: url('static/imagem/Plano.png'); /* A imagem de fundo */
     background-size: cover;
     background-position: center;
+    background-color: #30522d;
 }
 
 /* Container do formulário */
@@ -37,7 +37,7 @@ body {
     border-radius: 20px; /* Bordas mais arredondadas */
     padding: 40px 30px; /* Aumenta o espaçamento interno */
     width: 100%;
-    max-width: 350px; /* Largura maior para o formulário */
+    max-width: 500px; /* Largura maior para o formulário */
     text-align: center;
     z-index: 10;
     backdrop-filter: blur(15px); /* Desfoque de fundo mais sutil */
@@ -46,6 +46,25 @@ body {
     display: flex;
     flex-direction: column; /* Garante que todos os elementos dentro do formulário sejam empilhados */
     gap: 20px; /* Adiciona espaçamento entre os elementos */
+}
+
+form textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    width: 70%; /* Ocupa toda a largura disponível */
+    height: 100px; /* Define altura maior para o campo */
+    resize: none; /* Impede redimensionamento */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
 
 /* Animação de Fade-In */
@@ -134,8 +153,14 @@ form button:hover {
 /* Seção direita (tela verde sem conteúdo) */
 .right-section {
     flex: 1;
-    background-color: #3d534f; /* Cor verde */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover; /* Garante que a imagem cubra toda a div */
 }
+
 
 /* Estilos adicionais para a responsividade */
 @media (max-width: 768px) {

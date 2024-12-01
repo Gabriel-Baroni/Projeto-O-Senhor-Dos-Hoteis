@@ -10,19 +10,21 @@
     <div class="container">
         <!-- Seção Esquerda (Formulário e Imagem de Fundo) -->
         <div class="left-section">
-            <img src="static/imagem/Plano.png" alt="Imagem de Fundo" class="background-image">
             <!-- Formulário de Cadastro -->
             <div class="form-container">
                 <h1 id="formTitle">Mandar E-mail</h1>
 
                 <form id="suportForm" action="{{ url_for('suport') }}" method="POST">
-                    <input type="hidden" name="action" value="Enviar> 
+                    <input type="hidden" name="action" value="Enviar"> 
                     <label for="email"></label>
                     <input type="email" id="email" name="email" placeholder="Email" required>
 
+                    <label for="senha"></label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                    
                     <label for="assunto"></label>
-                    <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
-
+                    <textarea id="assunto" name="assunto" placeholder="Assunto (máx. 200 caracteres)" maxlength="200"></textarea>
+        
                     <button type="submit">Enviar</button>
                 </form>
 
@@ -46,6 +48,9 @@
         </div>
 
         <!-- Seção Direita (Tela verde sem conteúdo) -->
-        <div class="right-section"></div>
+        <div class="right-section">
+            <img src="static/imagem/suport.jpg" alt="Imagem de Fundo" class="background-image">
+        </div>
+       
 </body>
 </html>

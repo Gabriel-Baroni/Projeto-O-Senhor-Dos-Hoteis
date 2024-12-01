@@ -2,7 +2,9 @@
 from flask import render_template, request, redirect, url_for, session, flash
 #Importa o conversor de strings em objetos de data
 from datetime import datetime
-
+import smtplib
+from email.message import Message
+ 
 #Faz a função principal das rotas e recebe os parâmetros: do objeto do flask e do BDD 
 def init_routes(app, supabase):
 
@@ -205,8 +207,38 @@ def init_routes(app, supabase):
         return render_template("about.html")
 
     # Rota para a tela de suporte
-    @app.route("/suport")
+    @app.route("/suport", methods=["POST", "GET"])
     def suport():
-        email = request.form.get("email")
-        assunto = request.form.get("assunto")
+        if request.method == "POST":
+            email_usuario = request.form.get("email")
+            corpo_email= request.form.get("assunto")
+            senha = ""  # Aqui, senha é a senha do e-mail de envio, provavelmente.
+
+            if not email_usuario or not senha or not corpo_email:
+                flash("Todos os campos devem ser preenchidos!", "error")
+                return render_template("suport.html")
+
+            # Criar a mensagem de e-mail
+            msg = Message()
+            msg.set_payload(corpo_email)  # Definir o corpo do e-mail com a mensagem do usuário
+            msg["Subject"] = f"Suporte solicitado por: {email_usuario}"
+            msg["From"] = email_usuario  # O e-mail de origem será o que o usuário forneceu
+            msg["To"] = "gdepaulabaroni@gmail.com"  # E-mail da empresa (destinatário)
+
+            # Enviar o e-mail
+            try:
+               # Usando SMTP do Gmail
+                with smtplib.SMTP("smtp.gmail.com", 587) as s:
+                    s.starttls()  # Iniciar comunicação segura
+                    s.login(email_usuario, senha)  # Login no e-mail de origem
+                    s.sendmail(msg["From"], [msg["To"]], msg.as_string())  # Enviar o e-mail
+
+                flash("Sua mensagem foi enviada com sucesso!", "success")
+                return redirect("/suport")
+            except Exception as e:
+                flash(f"Ocorreu um erro ao enviar o e-mail: {e}", "error")
+                return render_template("suport.html")
+
         return render_template("suport.html")
+
+    

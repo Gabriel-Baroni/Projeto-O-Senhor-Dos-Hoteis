@@ -1,6 +1,4 @@
-
 /* Estilos para o container */
-/* Ajustes para a .container */
 .container {
     max-width: 3000px;
     padding: 1%;
@@ -10,10 +8,11 @@
     position: relative; /* Se necessário para posicionamento da imagem */
 }
 
-  /* Estilos para o menu de navegação */
+/* Estilos para o menu de navegação */
 nav {
     background-color: white;
     padding: 20px 0;  /* Adiciona espaçamento em cima e embaixo */
+    position: relative; /* Para garantir que o conteúdo fique bem posicionado */
 }
 
 nav .logo {
@@ -52,7 +51,7 @@ nav ul li a:hover {
     color: #333;  /* Altera a cor do texto ao passar o mouse */
 }
 
-  /* Estilos para o logo e imagem */
+/* Estilo para o logo e imagem */
 .imagem-painel {
     width: 100px;
     height: auto;
@@ -68,6 +67,7 @@ nav ul li a:hover {
     left: 0;
     transform: translateY(-50%);
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -76,7 +76,38 @@ body {
     background-color: #f0f0f0; /* Fundo suave */
 }
 
-  /* Contêiner do formulário */
+/* Estilo para o menu do usuário (nome e logout) */
+.user-info {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da borda direita */
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #ff4d4d; /* Cor vermelha */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+/* Contêiner do formulário */
 .form-container {
     display: flex;
     justify-content: center;    /* Centraliza o formulário horizontalmente */
@@ -93,12 +124,10 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
 }
 
-  /* Estilo para o formulário */
-/* Estilos para o formulário */
-/* Estilos para o formulário */
+/* Estilo para o formulário */
 form {
     display: flex;
-    flex-direction: row ; /* Organiza os campos do formulário em coluna */
+    flex-direction: row; /* Organiza os campos do formulário em coluna */
     gap: 30px; /* Aumenta o espaçamento entre os campos do formulário */
     width: 100%; /* Faz o formulário ocupar toda a largura disponível */
 }
@@ -140,6 +169,7 @@ form button {
 form button:hover {
     background-color: #0056b3; /* Cor de fundo do botão quando o mouse passa por cima */
 }
+
 /* Adiciona mais espaço no topo dos campos de Check-in e Check-out diretamente */
 #checkin, #checkout {
     color: white;
@@ -148,4 +178,3 @@ form button:hover {
 .check {
     color :#ffffff
 }
-
