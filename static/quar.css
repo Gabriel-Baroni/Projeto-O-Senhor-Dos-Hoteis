@@ -1,0 +1,120 @@
+/* Estilo geral */
+body {
+    background-image: url('/static/imagem/mid.jpeg');
+    background-size: cover; /* Ajusta o fundo para cobrir toda a tela */
+    background-position: center; /* Posiciona o fundo centralizado */
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Overlay na imagem de fundo para melhorar a legibilidade */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Cor semitransparente para melhorar o contraste */
+    z-index: -1; /* Coloca o overlay atrás do conteúdo */
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo para os quadros dos quartos */
+.quartos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px; /* Adiciona mais espaço entre os quadros */
+}
+
+/* Estilo individual para cada quadro */
+.quarto1 {
+    background-color: rgba(255, 255, 255, 0.85); /* Fundo com transparência */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover para aumentar a interatividade */
+.quarto1:hover {
+    transform: translateY(-10px); /* Move o quadro levemente para cima */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Imagem do quarto */
+.quarto1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir bem o espaço */
+}
+
+/* Títulos dos quartos */
+.quarto1 h3 {
+    margin-top: 15px;
+    font-size: 1.6em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Parágrafos de descrição */
+.quarto1 p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Estilo para o link de detalhes */
+.quarto1 a {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover para o link */
+.quarto1 a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quartos {
+        gap: 15px;
+    }
+
+    .quarto1 {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .quarto1 {
+        width: 100%;
+    }
+}

@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quartos disponíveis</title>
+    <link rel="stylesheet" href="static/quar.css">
 </head>
 <body>
     {% if quartos %}
     <h2>Quartos Disponíveis:</h2>
     <div class="quartos">
         {% for quarto in quartos %}
-            <div class="quarto">
-                <img src="" alt="Imagem do Quarto" style="width: 200px; height: 150px;">
+            <div class="quarto1">
+                <img src="static/imagem/bolsao.avif">
                 <h3>{{ quarto['Nome'] }}</h3>
                 <p>Capacidade: {{ quarto['capacidade'] }} pessoas</p>
                 <p>Preço por noite: R$ {{ quarto['preco_diaria'] }}</p>
