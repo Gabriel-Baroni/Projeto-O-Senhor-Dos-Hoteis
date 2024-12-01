@@ -193,7 +193,6 @@ def init_routes(app, supabase):
 
         return render_template("login_cadastro.html")
     @app.route("/logout")
-    
     def logout():
         session.pop("usuario_id", None)  # Remove o ID do usuário da sessão
         flash("Você saiu da conta com sucesso.", "info")
@@ -208,4 +207,6 @@ def init_routes(app, supabase):
     # Rota para a tela de suporte
     @app.route("/suport")
     def suport():
+        email = request.form.get("email")
+        assunto = request.form.get("assunto")
         return render_template("suport.html")

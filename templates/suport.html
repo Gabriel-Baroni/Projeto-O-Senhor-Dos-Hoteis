@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Suporte</title>
+    <link rel="stylesheet" href="static/suport.css">
 </head>
 <body>
-    
+    <div class="container">
+        <!-- Seção Esquerda (Formulário e Imagem de Fundo) -->
+        <div class="left-section">
+            <img src="static/imagem/Plano.png" alt="Imagem de Fundo" class="background-image">
+            <!-- Formulário de Cadastro -->
+            <div class="form-container">
+                <h1 id="formTitle">Mandar E-mail</h1>
+
+                <form id="suportForm" action="{{ url_for('suport') }}" method="POST">
+                    <input type="hidden" name="action" value="Enviar> 
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+
+                    <label for="assunto"></label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <div class="flash-messages">
+                    {% for message in messages %}
+                      <div class="alert alert-info flash-message" role="alert">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endwith %}
+              
+              <script src="/static/flash_message_time.js"></script>
+
+            
+            </div>
+        </div>
+
+        <!-- Seção Direita (Tela verde sem conteúdo) -->
+        <div class="right-section"></div>
 </body>
 </html>
