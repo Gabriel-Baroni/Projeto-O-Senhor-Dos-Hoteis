@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas Feitas</title>
+    <link rel="stylesheet" href="static/quar.css">
+</head>
+<body>
+    <h2>Suas Reservas</h2>
+    <div class="quartos">
+        {% if reservas %}
+            {% for reserva in reservas %}
+                <div class="quarto1">
+                    <!-- Certifique-se de que a chave 'imagem' existe na sua tabela de reservas ou quartos -->
+                    <h3>Data da Reserva: {{ reserva['data_reserva'] }}</h3>
+                    {% if reserva['quarto'] %}
+                        <h4>Nome do quarto: {{ reserva['quarto']['Nome'] }}</h4>
+                        <img src="{{ reserva['quarto']['imagem'] }}" alt="Imagem do quarto">
+                        <p>Capacidade: {{ reserva['quarto']['capacidade'] }} pessoas</p>
+                        <p>Preço por diária: R${{ reserva['quarto']['preco_diaria'] }}</p>
+                        <p>Check-in: {{ reserva['checkin'] }}</p>
+                        <p>Check-out: {{ reserva['checkout'] }}</p>
+                        <p>Preço total: {{ reserva['preco_total'] }}</p>
+                {% else %}
+                    <p>Informações do quarto não disponíveis.</p>
+                {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Você ainda não possui reservas.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

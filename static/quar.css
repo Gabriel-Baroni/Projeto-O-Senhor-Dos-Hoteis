@@ -92,6 +92,14 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
+.quartos .quarto1 img {
+    width: 280px; /* Define a largura */
+    height: 200px; /* Define a altura */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner sem distorção */
+    border-radius: 8px; /* (Opcional) Adiciona bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* (Opcional) Adiciona uma sombra */
+}
+
 /* Efeito de hover para o link */
 .quarto1 a:hover {
     background-color: #0056b3;

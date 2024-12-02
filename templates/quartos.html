@@ -12,7 +12,7 @@
     <div class="quartos">
         {% for quarto in quartos %}
             <div class="quarto1">
-                <img src="static/imagem/bolsao.avif">
+                <img src="{{ quarto['imagem'] }}">
                 <h3>{{ quarto['Nome'] }}</h3>
                 <p>Capacidade: {{ quarto['capacidade'] }} pessoas</p>
                 <p>Preço por noite: R$ {{ quarto['preco_diaria'] }}</p>

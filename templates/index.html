@@ -25,6 +25,7 @@
         <li>
           <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
           <a href="{{ url_for('logout') }}" class="button">Sign-out</a>
+          <a href="{{ url_for('reserva_user') }}" class="button">Suas Reservas</a>
         </li>
         {% else %}
           <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>

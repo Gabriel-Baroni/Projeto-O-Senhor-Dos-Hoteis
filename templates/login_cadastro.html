@@ -58,17 +58,18 @@
               {% endwith %}
               
               <script src="/static/flash_message_time.js"></script>
-
-                <!-- Botões para alternar entre Login e Cadastro -->
-                <div class="switch-container">
-                    <button id="switchToLogin" onclick="toggleForm('login')">Já possui uma conta? Login</button>
-                    <button id="switchToCadastro" onclick="toggleForm('cadastro')" style="display:none;">Não possui uma conta? Cadastre-se</button>
-                </div>
+        
             </div>
         </div>
 
         <!-- Seção Direita (Tela verde sem conteúdo) -->
-        <div class="right-section"></div>
+        <div class="right-section">
+          <!-- Botões para alternar entre Login e Cadastro -->
+          <div class="switch-container">
+            <button id="switchToLogin" onclick="toggleForm('login')">Já possui uma conta? Login</button>
+            <button id="switchToCadastro" onclick="toggleForm('cadastro')" style="display:none;">Não possui uma conta? Cadastre-se</button>
+        </div>
+        </div>
     </div>
     <!-- Script JS -->
     <script src="static/formtoggle.js"></script>

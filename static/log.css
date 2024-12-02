@@ -251,19 +251,30 @@ form.active {
 }
 
 /* Adicionando transições para botões */
+
+
 .switch-container button {
+    font-size: 50px; /* Define o tamanho da fonte */
+    color: white; /* Define a cor do texto */
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Altera o cursor para indicar interatividade */
+    margin: 5px 0; /* Adiciona espaçamento entre os botões */
     background-color: transparent;
     border: none;
-    color: #336437;
-    font-size: 14px;
     cursor: pointer;
-    text-decoration: underline;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .switch-container button:hover {
-    color: #4b8643;
+    text-decoration: underline; /* (Opcional) Adiciona sublinhado ao passar o mouse */
+    color: #cccccc; /* (Opcional) Altera a cor ao passar o mouse */
     transform: scale(1.1);
+}
+
+.switch-container {
+    text-align: center; /* Centraliza os botões no contêiner */
 }
 
 

@@ -240,5 +240,30 @@ def init_routes(app, supabase):
                 return render_template("suport.html")
 
         return render_template("suport.html")
+    @app.route("/reserva_user", methods=["POST", "GET"])
+    def reserva_user():
+        usuario_id = session.get("usuario_id")
+        if not usuario_id:
+            flash("Você precisa estar logado para acessar esta página.")
+            return redirect(url_for("login")) 
+        try:
+            user_response = supabase.table("Reserva").select("*").eq("usuario_id", usuario_id).execute()
+            if user_response.data:
+                reservas = user_response.data
+                for reserva in reservas:
+                    quarto_id = reserva.get("quarto_id")  # Supondo que a chave do quarto seja "quarto_id"
+                    quarto_response = supabase.table("Quarto").select("*").eq("id", quarto_id).execute()
+                    if quarto_response.data:
+                        reserva['quarto'] = quarto_response.data[0]  # Adiciona o quarto relacionado à reserva
+
+                return render_template("reserva_user.html", reservas=reservas)
+            else:
+                flash( "Nenhuma reserva encontrada para este usuário.")
+                return render_template("reserva_user.html", reservas=[])
+        except Exception as e:
+            flash("Erro ao acessar os dados. Por favor, tente novamente.")
+            return render_template("reserva_user.html", reservas=[], error=str(e))
+        
+
 
     
