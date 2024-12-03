@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\static\css\reser.css">
     <title>Reserva de Quarto</title>
 </head>
 <body>
-    <h1>Detalhes do Quarto</h1>
-    <p>Nome: {{ quarto.Nome }}</p>
-    <p>Capacidade: {{ quarto.capacidade }}</p>
-    <p>Preço da diária: R$ {{ quarto.preco_diaria }}</p>
-    <p>Preço total: R$ {{ preco_total }}</p>
-    <form method="POST">
-        <button type="submit">Confirmar Reserva</button>
-    </form>
+    <div class="container">
+        <h1>Detalhes do Quarto</h1>
+        <!-- Imagem do quarto -->
+        <img src="{{ quarto['imagem'] }}" class="quarto-img">
+        
+        <!-- Detalhes do quarto -->
+        <div class="details">
+            <p><strong>Nome:</strong> {{ quarto.Nome }}</p>
+            <p><strong>Capacidade:</strong> {{ quarto.capacidade }}</p>
+            <p><strong>Preço da diária:</strong> R$ {{ quarto.preco_diaria }}</p>
+            <p><strong>Preço total:</strong> R$ {{ preco_total }}</p>
+        </div>
+        
+        <!-- Formulário de confirmação -->
+        <form method="POST">
+            <button type="submit">Confirmar Reserva</button>
+        </form>
+    </div>
 </body>
 </html>
+

@@ -1,0 +1,76 @@
+/* Fundo geral */
+body {
+    background-image: url('/static/imagem/mid.jpeg'); /* Fundo, se necessário */
+    background-size: cover; /* Ajusta para cobrir toda a tela */
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox ativado */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Ocupa 100% da altura da janela */
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.349);
+    z-index: -1;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Imagem do quarto */
+.quarto-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Detalhes do quarto */
+.details {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.details p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Botão de reserva */
+button {
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

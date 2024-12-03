@@ -5,6 +5,7 @@ body {
     padding: 0;
     display: flex;
     height: 100vh;
+    position: relative; /* Necessário para o ::before funcionar */
 }
 
 /* Container para dividir a tela em duas partes */
@@ -60,6 +61,33 @@ body {
     }
 }
 
+/* Animação para a imagem .imglogi */
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Aplicando a animação à imagem .imglogi */
+.imglogi {
+    width: 450px;
+    height: auto;
+    margin-bottom: 20px; /* Espaço entre a imagem e o switch-container */
+    animation: bounce 2s ease-in-out infinite; /* Animação de balançar */
+}
+
 /* Título do formulário */
 h1 {
     font-size: 2.4em; /* Tamanho maior para o título */
@@ -79,8 +107,6 @@ form input {
     transition: all 0.3s ease;
     width: 70%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave nos inputs */
-    
-
 }
 
 form input:focus {
@@ -103,7 +129,6 @@ form button {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave no botão */
     margin-top: 20px; /* Adiciona um espaço entre os campos e o botão */
     margin-bottom: 20px;
-    
 }
 
 /* Botão "Cadastrar" */
@@ -118,8 +143,11 @@ form button:hover {
     justify-content: center;
     gap: 15px;
     margin-top: 30px;
+    flex-direction: column; /* Organiza os botões na vertical */
+    align-items: center; /* Centraliza os botões horizontalmente */
 }
 
+/* Estilo dos botões do switch */
 .switch-container button {
     background-color: transparent;
     border: none;
@@ -141,52 +169,12 @@ form:not(.active) {
 
 /* Seção direita (tela verde sem conteúdo) */
 .right-section {
-    flex: 1;
+    flex: 0.7;
     background-color: #3d534f; /* Cor verde */
-}
-
-/* Estilos adicionais para a responsividade */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Deixa a tela em duas colunas em telas menores */
-    }
-    .left-section, .right-section {
-        flex: none;
-        width: 100%; /* Faz com que as seções ocupem 100% da largura */
-    }
-    .form-container {
-        width: 80%; /* Reduz o tamanho do formulário em telas pequenas */
-    }
-
-    h1 {
-        font-size: 2em; /* Tamanho de título menor em telas pequenas */
-    }
-}
-
-
-.switch-container button {
-    background-color: transparent;
-    border: none;
-    color: #334133;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: underline;
-    transition: color 3s ease;
-}
-
-.switch-container button:hover {
-    color: #4b8643;
-}
-
-/* Formulário Inativo (ocultar o formulário alternado) */
-form:not(.active) {
-    display: none;
-}
-
-/* Seção direita (tela verde sem conteúdo) */
-.right-section {
-    flex: 1;
-    background-color: #3d534f; /* Cor verde */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    flex-direction: column; /* Alinha tudo na vertical */
 }
 
 /* Estilos adicionais para a responsividade */
@@ -251,8 +239,6 @@ form.active {
 }
 
 /* Adicionando transições para botões */
-
-
 .switch-container button {
     font-size: 50px; /* Define o tamanho da fonte */
     color: white; /* Define a cor do texto */
@@ -274,7 +260,18 @@ form.active {
 }
 
 .switch-container {
-    text-align: center; /* Centraliza os botões no contêiner */
+    display: flex;
+    flex-direction: column; /* Organiza os botões na vertical */
+    gap: 15px; /* Espaço entre os botões */
+    justify-content: center; /* Centraliza os botões verticalmente */
+    align-items: center; /* Centraliza os botões horizontalmente */
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    .imglogi {
+        width: 70%; /* Torna a imagem menor em telas pequenas */
+        margin-bottom: 20px;
+    }
+}
 
