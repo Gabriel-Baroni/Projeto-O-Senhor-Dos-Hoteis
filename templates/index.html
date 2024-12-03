@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static\css\style.css">
     <title>O Senhor Dos Hotéis</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
         <li>
           <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
           <a href="{{ url_for('logout') }}" class="button">Sign-out</a>
-          <a href="{{ url_for('reserva_user') }}" class="button">Suas Reservas</a>
+          <a href="{{ url_for('reserva_user') }}" class="button">Suas reservas</a>
         </li>
         {% else %}
           <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>
@@ -69,7 +69,7 @@
   {% endwith %}    
 
   
-  <script src="/static/flash_message_time.js"></script>
+  <script src="static\js\flash_message_time.js"></script>
   
 </body>
 </html>

@@ -240,6 +240,8 @@ def init_routes(app, supabase):
                 return render_template("suport.html")
 
         return render_template("suport.html")
+    
+    #Rota para a tela de Reservas do usuário
     @app.route("/reserva_user", methods=["POST", "GET"])
     def reserva_user():
         usuario_id = session.get("usuario_id")
