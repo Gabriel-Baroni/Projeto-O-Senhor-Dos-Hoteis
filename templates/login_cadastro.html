@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e Cadastro</title>
     <link rel="stylesheet" href="static\css\log.css">
+    <link rel="stylesheet" href="static\css\flash_message.css">
 </head>
 <body>
     <div class="container">
@@ -49,7 +50,7 @@
                 {% if messages %}
                   <div class="flash-messages">
                     {% for message in messages %}
-                      <div class="alert alert-info flash-message" role="alert">
+                      <div class="flash-message">
                         {{ message }}
                       </div>
                     {% endfor %}

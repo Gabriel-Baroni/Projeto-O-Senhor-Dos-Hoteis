@@ -104,7 +104,7 @@ def init_routes(app, supabase):
             preco_total = dias * quarto["preco_diaria"]
 
             return render_template("reserva.html", quarto=quarto, preco_total=preco_total)
-
+        
         elif request.method == "POST":
             # Confirmar reserva
             usuario_id = session.get("usuario_id")

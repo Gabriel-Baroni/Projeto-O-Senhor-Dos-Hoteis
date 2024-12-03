@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static\css\style.css">
+    <link rel="stylesheet" href="static\css\flash_message.css">
+    
     <title>O Senhor Dos Hotéis</title>
 </head>
 <body>
@@ -60,7 +62,7 @@
     {% if messages %}
       <div class="flash-messages">
         {% for message in messages %}
-          <div class="alert alert-info flash-message" role="alert">
+          <div class="flash-message">
             {{ message }}
           </div>
         {% endfor %}

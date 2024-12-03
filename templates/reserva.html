@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\static\css\reser.css">
     <title>Reserva de Quarto</title>
 </head>
 <body>
     <div class="container">
         <h1>Detalhes do Quarto</h1>
         <!-- Imagem do quarto -->
-        <img src="{{ quarto['imagem'] }}" class="quarto-img">
+        <img src="{{ url_for('static', filename=quarto['imagem'].replace('static/', '').replace('/reserva', '')) }}" class="quarto-img">
+
+
         
         <!-- Detalhes do quarto -->
         <div class="details">

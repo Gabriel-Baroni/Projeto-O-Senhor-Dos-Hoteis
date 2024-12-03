@@ -1,0 +1,38 @@
+/* Estilos para as flash messages */
+.flash-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 9999;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInOut 5s ease-in-out forwards;
+}
+
+/* Animação para exibir a mensagem e depois desaparecer */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
