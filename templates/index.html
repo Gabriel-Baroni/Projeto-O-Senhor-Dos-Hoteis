@@ -1,78 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static\css\style.css">
-    <link rel="stylesheet" href="static\css\flash_message.css">
-    
-    <title>O Senhor Dos Hotéis</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static\css\style.css">
+  <link rel="stylesheet" href="static\css\flash_message.css">
+  <title>O Senhor dos Hotéis</title>
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <div class="logo">
-        <img src="static/imagem/logo.jpg" alt="O Senhor Dos Anéis" class="imagem-painel">
-        <div class="titulo"> O Senhor <br> Dos Hotéis</div>
-        <div>
-          <img src="static/imagem/folhae.png" class="folhae" alt="Folhae">
-        </div>
-        
-      </div>
-      <hr>
-      <!-- Menu de navegação -->
-      <ul>
-        <li><a href="#">Sobre</a></li>
-        {% if usuario_email %}
-        <li>
-          <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
-          <a href="{{ url_for('logout') }}" class="button">Sign-out</a>
-          <a href="{{ url_for('reserva_user') }}" class="button">Suas reservas</a>
-        </li>
-        {% else %}
-          <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>
-        {% endif %}
-        <li><a href="{{ url_for('suport') }}">Suporte</a></li>
-      </ul>
-    </nav>
-  </div>
-  
-    <div class="fundo"></div>
-    <div class="content">
-      
-    </div>
-    <div>
-      <img src="static/imagem/Plano.png" class="parallax" >
-    </div>
-  
-    <div class = "form-container">
-      <form action="{{ url_for('quartos') }}" method="post">
-        <label for="numero_pessoas"></label>
-        <input type="number" id="numero_pessoas" name="numero_pessoas" placeholder="Número de pessoas:" required>
-        
-        <label for="checkin" class = "check">Check-in:</label>
-        <input type="date" id="checkin" name="checkin" placeholder="Check-in" required>
-    
-        <label for="checkout"class="check">Check-out:</label>
-        <input type="date" id="checkout" name="checkout" placeholder="Check-out" required>
-    
-        <button type="submit">Buscar Quartos</button>
-    </form>   
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <div class="flash-messages">
-        {% for message in messages %}
-          <div class="flash-message">
-            {{ message }}
+  <div class="wrapper">
+    <main>
+      <section class="module parallax parallax-1">
+        <div class="container">
+            <nav>
+              <div class="logo">
+                <img src="static/imagem/logo.jpg" alt="O Senhor Dos Anéis" class="imagem-painel">
+                <div class="titulo"> O Senhor <br> Dos Hotéis</div>
+                <div>
+                  <img src="static/imagem/folhae.png" class="folhae-left" alt="Folhae">
+                  <img src="static/imagem/folhae.png" class="folhae-right" alt="Folhae">
+                </div>
+                
+              </div>
+              <hr>
+              <!-- Menu de navegação -->
+              <ul>
+                <li><a href="#">Sobre</a></li>
+                {% if usuario_email %}
+                <li>
+                  <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
+                  <a href="{{ url_for('logout') }}" class="button">Sign-out</a>
+                  <a href="{{ url_for('reserva_user') }}" class="button">Suas reservas</a>
+                </li>
+                {% else %}
+                  <li><a href="{{ url_for('login_cadastro') }}" class="button">Log-in/Cadastro</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('suport') }}">Suporte</a></li>
+              </ul>
+            </nav>
           </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  {% endwith %}    
+            <div class="fundo"></div>
+            <div class="content"> 
+            </div>
+            <div class = "form-container">
+              <form action="{{ url_for('quartos') }}" method="post">
+                <label for="numero_pessoas"></label>
+                <input type="number" id="numero_pessoas" name="numero_pessoas" placeholder="Número de pessoas:" required>
+                
+                <label for="checkin" class = "check">Check-in:</label>
+                <input type="date" id="checkin" name="checkin" placeholder="Check-in" required>
+            
+                <label for="checkout"class="check">Check-out:</label>
+                <input type="date" id="checkout" name="checkout" placeholder="Check-out" required>
+            
+                <button type="submit">Buscar Quartos</button>
+            </form>   
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="flash-messages">
+                {% for message in messages %}
+                  <div class="flash-message">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}    
+        
+          <script src="static\js\flash_message_time.js"></script>
+      </section>
 
-  
-  <script src="static\js\flash_message_time.js"></script>
-  
+      <section class="module content">
+        <div class="container">
+          <h2 style="text-align: center;">Em uma Toca no chão vivia um hóspede...</h2>
+          <h1 style="text-align: center;">
+            Nossos quartos, como os salões de Valfenda, são oásis de conforto e tranquilidade, perfeitos para renovar suas forças após um dia repleto de aventuras. 
+          </h1>    
+      </section>
+
+      <section class="module parallax parallax-2">
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <h2 style="text-align: center"> Seu refúgio, sua jornada! </h2>
+          <h1 style="text-align: center;">
+            Aqui, você encontrará mais do que uma hospedagem: encontrará um porto seguro para suas jornadas, pois como diria Gandalf: 
+          </h1>
+          <h1 style="text-align: center">
+            "Nem todos que vagam estão perdidos."
+          </h1>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-3">
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <p style="text-align: center; font-size: larger;">
+            Copyright © 2024 O Senhor dos Hotéis. Todos os direitos reservados.
+          </p>          
+        </div>
+      </section>
+
+    </main>
+  </div>
+
 </body>
 </html>
-
