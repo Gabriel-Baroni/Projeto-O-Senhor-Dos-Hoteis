@@ -29,7 +29,7 @@
                 <li><a href="#">Sobre</a></li>
                 {% if usuario_email %}
                 <li>
-                  <span class="user-info">Bem-vindo, {{ usuario_email }}</span>
+                  <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
                   <a href="{{ url_for('logout') }}" class="button">Sign-out</a>
                   <a href="{{ url_for('reserva_user') }}" class="button">Suas reservas</a>
                 </li>
