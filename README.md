@@ -33,7 +33,6 @@ Para o total funcionamento, a aplicação deve conter:
 
 - `Desempenho`: O site deve funcionar sem travamentos e com agilidade de resposta.
 - `Segurança`: O site deve garantir que os dados do cliente estejam em segurança.
-![image](https://github.com/user-attachments/assets/cb65be56-2ea6-4079-b689-b70429d4490b)
 
 <h1>📑 Matriz de Requisitos</h1>
 <img src="https://github.com/user-attachments/assets/2743c732-f86c-4b2d-82a0-d9670abd84e6" width=1000> 
@@ -86,7 +85,10 @@ Essa entidade é a responsável por armazenar todas as reservas em que a data de
 
 <h1>🧍Diagramas UML</h1>
 <h2>Tela de Login e Cadastro</h2>
-<img src="https://github.com/user-attachments/assets/cb65be56-2ea6-4079-b689-b70429d4490b" width=1000> 
+<img src="https://github.com/user-attachments/assets/cb65be56-2ea6-4079-b689-b70429d4490b" width=1000>
+<h2>Tela inicial, quartos e reserva</h2>
+<img src="https://github.com/user-attachments/assets/3afa9e98-c9fa-416e-a6ac-0a7eca64ab13" width=1000>
+
 
 
 <h1>🧰 Tecnologias Utilizadas</h1> 
