@@ -121,7 +121,6 @@ Essa entidade é a responsável por armazenar todas as reservas em que a data de
 <h2>Arquitetura de Rede da Hotelaria</h2>
 <img src="https://github.com/user-attachments/assets/8de6fe1c-e573-4cf2-98cb-f2a7a5097bda" width=1000> 
 
-<p>Adicionar diagram UML, estudo de caso e matriz de requisito</p>
 
 # 🧑‍💻 Desenvolvedores
 
