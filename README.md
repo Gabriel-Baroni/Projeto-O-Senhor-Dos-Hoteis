@@ -37,7 +37,6 @@ Para o total funcionamento, a aplicação deve conter:
 <h1>📑 Matriz de Requisitos</h1>
 <img src="https://github.com/user-attachments/assets/2743c732-f86c-4b2d-82a0-d9670abd84e6" width=1000> 
 
-
 <h1>📊 Modelagem do Banco de Dados</h1> 
 <img src="https://github.com/user-attachments/assets/f478260d-83f6-4f89-89a6-bb44cc65bb63" width=1000> 
 <img src="https://github.com/user-attachments/assets/01773011-fe08-4dcf-ba66-b3a0956053bc" width=1000> 
