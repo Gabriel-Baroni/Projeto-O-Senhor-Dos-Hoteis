@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="static\css\style.css">
   <link rel="stylesheet" href="static\css\flash_message.css">
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
   <title>O Senhor dos Hotéis</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
               <hr>
               <!-- Menu de navegação -->
               <ul>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="{{ url_for('about') }}">Sobre</a></li>
                 {% if usuario_email %}
                 <li>
                   <span class="user-info">Bem-vindo, {{ usuario_email }}!</span>
