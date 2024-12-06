@@ -52,6 +52,9 @@ def init_routes(app, supabase):
         if data_checkin < data_atual or data_checkout<data_atual:
             flash("A data não pode ser menor do que a data atual")
             return redirect(url_for("homepage"))
+        if numero_pessoas > 20:
+            flash("Não existe quarto para esse número de pessoas")
+            return redirect(url_for("homepage"))
         
         # Consultando os quartos com capacidade suficiente
         response = supabase.table("Quarto").select("*").gte("capacidade", numero_pessoas).execute()
