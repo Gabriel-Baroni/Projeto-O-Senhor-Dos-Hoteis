@@ -212,7 +212,7 @@ def init_routes(app, supabase):
         if request.method == "POST":
             email_usuario = request.form.get("email")
             corpo_email= request.form.get("assunto")
-            senha = ""  # Aqui, senha é a senha do e-mail de envio, provavelmente.
+            senha = "llmryqmnetydjeia"  # Aqui, senha é a senha do e-mail de envio, provavelmente.
 
             if not email_usuario or not senha or not corpo_email:
                 flash("Todos os campos devem ser preenchidos!", "error")
@@ -234,7 +234,7 @@ def init_routes(app, supabase):
                     s.sendmail(msg["From"], [msg["To"]], msg.as_string())  # Enviar o e-mail
 
                 flash("Sua mensagem foi enviada com sucesso!", "success")
-                return redirect("/suport")
+                return redirect(url_for("homepage"))
             except Exception as e:
                 flash(f"Ocorreu um erro ao enviar o e-mail: {e}", "error")
                 return render_template("templates/suport.html")
