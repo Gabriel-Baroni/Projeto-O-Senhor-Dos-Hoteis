@@ -77,7 +77,7 @@ def init_routes(app, supabase):
                 quartos_disponiveis.append(quarto)
 
         usuario_id = session.get('usuario_id')
-        return render_template("quartos.html", quartos=quartos_disponiveis, usuario_id=usuario_id)
+        return render_template("templates/quartos.html", quartos=quartos_disponiveis, usuario_id=usuario_id)
 
     # Rota para a página de reserva de um quarto específico (reserva.html)
     @app.route("/reserva/<int:quarto_id>", methods=["GET", "POST"])
@@ -103,7 +103,7 @@ def init_routes(app, supabase):
             dias = (data_checkout - data_checkin).days
             preco_total = dias * quarto["preco_diaria"]
         
-            return render_template("reserva.html", quarto=quarto, preco_total=preco_total)
+            return render_template("templates/reserva.html", quarto=quarto, preco_total=preco_total)
         
         elif request.method == "POST":
             # Confirmar reserva
@@ -193,7 +193,7 @@ def init_routes(app, supabase):
                     flash("Erro no login: usuário não encontrado ou senha incorreta.")
                     return redirect(url_for("login_cadastro"))
 
-        return render_template("login_cadastro.html")
+        return render_template("templates/login_cadastro.html")
     @app.route("/logout")
     def logout():
         session.pop("usuario_id", None)  # Remove o ID do usuário da sessão
@@ -204,7 +204,7 @@ def init_routes(app, supabase):
     # Rota para a tela de informações do hotel
     @app.route("/about")
     def about():
-        return render_template("about.html")
+        return render_template("templates/about.html")
 
     # Rota para a tela de suporte
     @app.route("/suport", methods=["POST", "GET"])
@@ -216,7 +216,7 @@ def init_routes(app, supabase):
 
             if not email_usuario or not senha or not corpo_email:
                 flash("Todos os campos devem ser preenchidos!", "error")
-                return render_template("suport.html")
+                return render_template("templates/suport.html")
 
             # Criar a mensagem de e-mail
             msg = Message()
@@ -237,9 +237,9 @@ def init_routes(app, supabase):
                 return redirect("/suport")
             except Exception as e:
                 flash(f"Ocorreu um erro ao enviar o e-mail: {e}", "error")
-                return render_template("suport.html")
+                return render_template("templates/suport.html")
 
-        return render_template("suport.html")
+        return render_template("templates/suport.html")
     
     #Rota para a tela de Reservas do usuário
     @app.route("/reserva_user", methods=["POST", "GET"])
@@ -258,13 +258,13 @@ def init_routes(app, supabase):
                     if quarto_response.data:
                         reserva['quarto'] = quarto_response.data[0]  # Adiciona o quarto relacionado à reserva
 
-                return render_template("reserva_user.html", reservas=reservas)
+                return render_template("templates/reserva_user.html", reservas=reservas)
             else:
                 flash( "Nenhuma reserva encontrada para este usuário.")
-                return render_template("reserva_user.html", reservas=[])
+                return render_template("templates/reserva_user.html", reservas=[])
         except Exception as e:
             flash("Erro ao acessar os dados. Por favor, tente novamente.")
-            return render_template("reserva_user.html", reservas=[], error=str(e))
+            return render_template("templates/reserva_user.html", reservas=[], error=str(e))
         
 
 

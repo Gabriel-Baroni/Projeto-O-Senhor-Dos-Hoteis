@@ -6,7 +6,7 @@ from routes import init_routes
 #Chave de sessão do Flask
 FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY")
 
-app= Flask(__name__)
+app= Flask(__name__, template_folder='./')
 app.secret_key = FLASK_SECRET_KEY 
 
 #Configuração do Supabase
