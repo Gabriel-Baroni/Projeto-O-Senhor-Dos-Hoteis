@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas Feitas</title>
     <link rel="stylesheet" href="static\css\quar.css">
+    <link rel="stylesheet" href="static\css\flash_message.css">
 </head>
 <body>
     <h2>Suas Reservas</h2>
@@ -30,6 +31,20 @@
         {% else %}
             <p>Você ainda não possui reservas.</p>
         {% endif %}
+
+          {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  <div class="flash-messages">
+                    {% for message in messages %}
+                      <div class="flash-message">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endwith %}
+              
+              <script src="/static/flash_message_time.js"></script>
     </div>
 </body>
 </html>
