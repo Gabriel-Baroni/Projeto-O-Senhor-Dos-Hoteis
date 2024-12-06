@@ -102,7 +102,7 @@ def init_routes(app, supabase):
             data_checkout = datetime.strptime(checkout, "%Y-%m-%d")
             dias = (data_checkout - data_checkin).days
             preco_total = dias * quarto["preco_diaria"]
-
+        
             return render_template("reserva.html", quarto=quarto, preco_total=preco_total)
         
         elif request.method == "POST":
