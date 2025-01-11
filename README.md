@@ -2,7 +2,7 @@
 <p align="center">Um trabalho para a disciplina de DESENVOLVIMENTO DE APLICAÇÕES COM BANCO DE DADOS - 3º Informática do IFSP-Jacareí</p>
 <br>
 <p align="center">
-<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=%20DESENVOLVIDO&color=GREEN&style=for-the-badge"/>
 
 <h1>👨‍🏫 Professores responsáveis</h1> 
 
